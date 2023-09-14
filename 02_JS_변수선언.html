@@ -1,0 +1,95 @@
+<! doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>JS 변수 선언</title>
+    <script>
+    /* 변수 선언
+    변수 선언 키워드(명령어) : var, let, const
+        - var : 변수 사용 범위 fuction 레벨(단위)
+        - let, const : 변수 사용 범위 { } 기준 (중괄호 내에서만 사용 가능)
+        변수명 사용 문자 : 영문대소문자, 숫자, _, $
+        기본자료형 : 문자열(string), 숫자(number), 불린(boolean), undifined(값할당안됨)
+        참조형 : object(String, Number, Boolean, Array, Math, Date, Set, Map ..)
+    ********************/
+        // var 변수 : 변수 선언문 이전에도 사용 가능(undifined)하고 중복 선언도 허용
+        document.write("변수 선언 전 varNum : " + varNum, "<br>");
+        var varNum = 100;
+        var varNum = 200; // 중복 선언 허용(주의 요함)
+        document.write("변수 선언 후 varNum : " + varNum, "<br>");
+        document.write("<hr>");
+        
+        //==================================
+        // let, const : 변수 사용 범위 { } 기준 (중괄호 내에서만 사용 가능)
+        // const : 상수화된 변수, 값 설정 이후 변경 불가 
+        //let letNum;
+        let letNum = 100;
+        
+        document.write("변수 선언 후 letNum : " + letNum, "<br>");
+        
+        //--------------------------
+        // const : 상수화된 변수, 값 설정 이후 변경 불가 
+        const const_var = "const 변수는 처음 한 번만 값 설정 가능";
+        document.write("const_var : " + const_var,"<br>");
+        
+        document.write("<hr>");
+        //============================================
+        var str = "안녕하세요(문자열)";
+        var num = 100;
+        var bool = true;
+        var undef; // 값 할당 안 된 상태
+        var vNull = null;
+        
+        document.write("문자열 출력 : " + str, "<br>");
+        document.write("숫자값 출력 : " + num, "<br>");
+        document.write("숫자값 출력 : " + (num + 1), "<br>"); // 괄호 사용 안 할 시 문자열 붙이기로 사용되어 1001, 계산 필요 시 괄호 작성 ! 
+        document.write("bool 출력 : " + bool, "<br>");
+        document.write("undef 출력 : " + undef, "<br>"); // undefined
+        document.write("vNull 출력 : " + vNull, "<br>"); // null 
+        document.write("<hr>");
+        
+        document.write("typeof str : " + typeof str, "<br>") // string
+        document.write("typeof num : " + typeof num, "<br>") // number
+        document.write("typeof bool : " + typeof bool, "<br>") // boolean
+        document.write("typeof undef : " + typeof undef, "<br>") // undefinedboolean
+        document.write("typeof vNull : " + typeof vNull, "<br>") // object(참조형 데이터)
+        document.write("<hr>");
+        
+        //------------------------------
+        // 변수에 고정된 타입의 개념이 없음
+        str = 500; // 변수 저장 타입이 변경됨
+        str = str + 500; 
+        document.write("str : " + str + " , typeof str : " + typeof str, "<br>")
+        
+        str = true; 
+        document.write("str : " + str + " , typeof str : " + typeof str, "<br>")
+        
+        var sum = num + str;// 101  : true 값은 1
+        document.write("sum 결과(100 + true) : " + sum, "<br>"); // 101
+        
+        sum = num + false;// 100  : false 값은 0
+        document.write("sum 결과(100 + false) : " + sum, "<br>"); // 100
+        document.write("<hr>");
+        
+        //-------------------------
+        // NaN (Not a Number) : 연산 결과가 숫자가 아님
+        num = 100;
+        document.write('num + "999" : ' + (num + "999"), "<br>" ); //  100999
+        document.write('num * "999" : ' + (num * "999"), "<br>" ); // 99900
+        document.write('num * undef : ' + (num * undef), "<br>" ); //NaN
+        document.write('num * "A" : ' + (num * "A"), "<br>" ); //NaN
+        document.write('"B" * "A" : ' + ("B" * "A"), "<br>" ); //NaN
+        
+        // 자바스크립트에서 오류가 발생하면 이후의 자바스크립트 실행 안 됨.
+        document.write("자바스크립트 오류 X");
+        document.write("<p> ------ head영역 JavaScript 끝 -----</p>");
+    </script>
+</head>
+<body>
+   <h1>자바스크립의 변수 선언 알아보기</h1>
+    
+</body>
+
+
+
+</html>
