@@ -1,0 +1,61 @@
+<! doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title></title>
+<script>
+    /* 마우스 이벤트
+    onmouseover : 마우스가 해당 영역에 위에 있으면 발생(들어오면)
+    onmouseout : 마우스가 해당 영역에서 나가면 발생(벗어나면)
+    *************/
+    window.onload = function(){
+    let imgbtn = document.getElementById("imgbtn");  
+        /*
+        console.log(imgbtn); 
+        imgbtn.onmouseover = function(){
+            console.log(">> imgbtn.onmouseover 실행(mouseover 이벤트 ) ");
+            // 이미지 버튼의 src 속성값 변경
+            imgbtn.firstElementChild.src = "images/btn2_yellow.png"; 
+        };
+        imgbtn.onmouseout = function() {
+            console.log(">> imgbtn.onmouseout 실행 ");
+            imgbtn.firstElementChild.src = "images/btn2_gray.png"; 
+        }*/
+    };
+    
+    // mouseenter, mouseleave : 동작 확인
+    imgbtn.addEventListener("mouseenter", function(){
+        console.log(">> mouseenter 이벤트 발생");
+         imgbtn.firstElementChild.src = "images/btn2_yellow.png"; 
+    });
+    
+    imgbtn.addEventListener("mouseleave", function(){
+        console.log(">> mouseleave 이벤트 발생");
+        imgbtn.firstElementChild.src = "images/btn2_gray.png"; 
+    });
+    
+    
+    
+</script>
+<style>
+    #btn1, #btn2 { background-color: lightblue; }
+    #btn2:hover { background-color: lightsteelblue;}
+    a { 
+        border: 1px solid blue; width: 100px; height: 100px; 
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <hr>
+    <a href="#" id="imgbtn">
+        <img src="images/btn2_gray.png" alt = "버튼">
+    </a>
+    
+</body>
+
+
+
+</html>
